@@ -1,0 +1,209 @@
+:root {
+  --primary-100: #8BC34A;
+  --primary-200: #6da52d;
+  --primary-300: #286400;
+  --accent-100: #FF9800;
+  --accent-200: #8f3d00;
+  --text-100: #333333;
+  --text-200: #5c5c5c;
+  --bg-100: #F5F5F5;
+  --bg-200: #ebebeb;
+  --bg-300: #c2c2c2;
+
+}
+
+body {
+  position: relative;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1450px;
+  width: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+header a {
+  max-width: 300px;
+  width: 300px;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #333;
+  border-bottom: none;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+header a:first-child {
+  border-right: none;
+}
+
+
+
+.containerCards {
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+
+}
+
+.cards {
+  border-inline: 1px solid black;
+  width: calc(20% - 2px);
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid black;
+
+}
+
+.imgContainer {
+  height: 70%;
+}
+
+.imgContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-bottom: 1px solid #333;
+}
+
+.utilsContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 10px;
+  position: relative;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .container {
+    position: relative;
+  }
+
+  .finalizarVenta {
+    position: fixed;
+    top: 90vh;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .containerCards {
+    flex-direction: column;
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 300px;
+    flex-direction: row;
+  }
+
+  .imgContainer {
+    width: 50%;
+    height: 100%;
+  }
+
+  .utilsContainer {
+    width: 50%;
+    height: 100%;
+    justify-content: flex-start;
+    position: relative;
+    margin-top: 50px;
+  }
+
+  .productoCantidad {
+    position: absolute;
+    bottom: 150px;
+  }
+
+}
+
+.utilsContainer span {
+  font-size: 14px;
+}
+
+.utilsContainer span:first-child {
+  padding-right: 20px;
+}
+
+.productoCantidad {
+  display: block;
+  margin-top: 20px;
+
+}
+
+.productoCantidad span {
+  padding: 10px 15px;
+  border: 1px solid #333;
+}
+
+.btnClickDelete {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+}
+
+.btnClickDelete button {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 24px;
+}
+
+.finalizarVenta {
+  background-color: white;
+  width: 100%;
+  max-width: 1450px;
+  height: 10vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom: 1px solid black;
+
+}
+
+.datosVenta {
+  display: flex;
+  flex-direction: column;
+  padding: 0 50px;
+  text-align: center;
+  line-height: 20px;
+}
+
+.datosVenta span:nth-child(2) {
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.finalizarVenta button {
+  width: 200px;
+  height: 10vh;
+  color: white;
+  background-color: black;
+  border: none;
+}
+
+.cestaVacia {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  flex-direction: column;
+}

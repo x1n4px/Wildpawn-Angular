@@ -1,0 +1,105 @@
+<body>
+  <div class="container">
+
+    <header>
+      <button (click)="selectButton(1)" [class.active]="selectedButton === 1">Compras</button>
+      <button (click)="selectButton(2)" [class.active]="selectedButton === 2">Cuenta</button>
+      <button (click)="selectButton(3)" [class.active]="selectedButton === 3">Ajustes</button>
+    </header>
+    <div class="comprasB" *ngIf="selectedButton === 1">
+
+
+    </div>
+    <div class="comprasB" *ngIf="selectedButton === 2">
+
+      <div class="cajaContainer">
+        <div class="caja">
+          <a class="link-with-arrows" (click)="selectBox(1)" [class.active]="selectedBox === 1">
+            <span class="link-text" style="font-size: 20px;">Dirección</span>
+
+
+            <span class="arrow-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="32"
+                height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M9 6l6 6l-6 6" />
+              </svg>
+            </span>
+          </a>
+
+          <a class="link-with-arrows">
+            <span class="link-text" style="font-size: 20px;">Wallet</span>
+
+
+            <span class="arrow-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="32"
+                height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M9 6l6 6l-6 6" />
+              </svg>
+            </span>
+          </a>
+          <a class="link-with-arrows">
+            <span class="link-text-double" style="font-size: 20px;">Email
+              <span class="additional-text">{{email}}@email.com</span></span>
+
+            <span class="arrow-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="32"
+                height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M9 6l6 6l-6 6" />
+              </svg>
+            </span>
+          </a>
+
+          <a class="link-with-arrows">
+            <span class="link-text-double" style="font-size: 20px;">Telefono
+              <span class="additional-text">000000000</span></span>
+
+            <span class="arrow-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="32"
+                height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M9 6l6 6l-6 6" />
+              </svg>
+            </span>
+          </a>
+          <a class="link-with-arrows">
+            <span class="link-text-double" style="font-size: 20px;">Cambiar la contraseña
+              <span class="additional-text">*********</span></span>
+
+            <span class="arrow-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="32"
+                height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M9 6l6 6l-6 6" />
+              </svg>
+            </span>
+          </a>
+
+        </div>
+
+        <div class="cajaDatos">
+          <div class="cajaDatosInfo" *ngIf="selectedBox === 1">
+            <a href="">
+              <span>
+                {{user.address.town}}
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <a (click)="logout()" style="font-size: 20px;">Cerrar sesión</a>
+      <a style="font-size: 20px;">Eliminar Cuenta</a>
+    </div>
+    <div class="comprasB" *ngIf="selectedButton === 3">
+
+
+    </div>
+  </div>
+</body>

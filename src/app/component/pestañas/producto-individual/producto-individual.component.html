@@ -1,0 +1,182 @@
+<section id="head">
+  <div class="interno">
+    <div class="utils">
+      <a class="volver" (click)="volverA()">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-badge-left" width="24"
+          height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#286400" fill="none" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M11 17h6l-4 -5l4 -5h-6l-4 5z" />
+        </svg>
+        COMIDA PARA {{familia | uppercase}}
+      </a>
+    </div>
+    <div class="internoG">
+      <div class="intGLeft">
+        <img [src]="producto.image" alt="">
+      </div>
+      <div class="intGRigth">
+        <p>{{producto.name}}</p>
+        <p>
+          <span>{{producto.food_type}}</span>
+          <span>{{producto.animal_age}}</span>
+          <span>{{producto.animal_size}}</span>
+        </p>
+        <p>{{producto.description}}</p>
+
+        <div class="pesoSaco">
+          <div  >
+           <div *ngFor="let pesoS of pesos">
+               <!-- <button class="color"  *ngIf="pesoS.check">{{pesoS.weigth}} KG</button>
+              <button (click)="toggleCheck(pesoS.weigth)" class="colorNot" *ngIf="!pesoS.check">{{pesoS.weigth}} KG</button> -->
+              <button class="colorNot" (click)="change(pesoS.reference, pesoS.id)">{{pesoS.weigth}}</button>
+            </div>
+          </div>
+
+        </div>
+        <div class="buttonCesta">
+          <button (click)="aniadirCesta()">Añadir a la cesta</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<section id="ingredientes">
+  <div class="interno">
+    <h1>PRINCIPALES INGREDIENTES NATURALES</h1>
+    <div class="cardCont">
+      <div class="card" *ngFor="let oj of producto.ingredients">
+        <div class="imgC">
+          <img [src]="oj.image" alt="">
+        </div>
+        <span>{{oj.amount}}</span>
+        <span>{{oj.name}}</span>
+        <span>{{oj.description}}</span>
+      </div>
+    </div>
+    <a href="ingredientes">DESCUBRE MÁS</a>
+  </div>
+</section>
+<section id="beneficios">
+  <div class="interno">
+    <span>BENEFICIOS</span>
+    <div class="container">
+      <div class="c1">
+        <div class="bn1">
+          <img src="https://static.naturesvariety.com/catalog/968939/Pack-Icon/largeImage" alt="">
+          <span>grado de energía adecuado para razas de tamaño pequeño
+          </span>
+        </div>
+        <div class="bn1">
+          <img src="https://static.naturesvariety.com/catalog/967157/Pack-Icon/largeImage" alt="">
+          <span>sistema inmunitario saludable</span>
+        </div>
+        <div class="bn1">
+          <img src="https://static.naturesvariety.com/catalog/968709/Pack-Icon/largeImage" alt="">
+          <span>sin colorantes, conservantes ni aromas artificiales</span>
+        </div>
+      </div>
+      <div class="c2">
+        <div class="bn1">
+          <img src="https://static.naturesvariety.com/catalog/967156/Pack-Icon/largeImage" alt="">
+          <span>pelaje brillante y piel sana</span>
+        </div>
+        <div class="bn1">
+          <img src="https://static.naturesvariety.com/catalog/968720/Pack-Icon/largeImage" alt="">
+          <span>elaborado cuidadosamente para conservar mejor los nutrientes</span>
+        </div>
+        <div class="bn1">
+          <img src="https://static.naturesvariety.com/catalog/968708/Pack-Icon/largeImage" alt="">
+          <span>proveedores de confianza</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="informacion">
+  <div class="interno">
+    <div class="txtHd">
+      <span>MÁS INFORMACIÓN</span>
+    </div>
+
+    <details class="accordion">
+      <summary>Composición</summary>
+      <div class="panel">
+        {{producto.Composition}}
+      </div>
+    </details>
+
+    <details class="accordion">
+      <summary>Aditivos nutricionales</summary>
+      <div class="panel">
+        {{producto.Additives}}
+      </div>
+    </details>
+
+    <details class="accordion">
+      <summary>Aditivos nutricionales</summary>
+      <div class="panel">
+        <div class="tablas">
+          <div class="ej1">
+            <span>{{producto.Crude_protein}}%</span>
+            <span>proteína bruta</span>
+          </div>
+          <div class="ej1">
+            <span>{{producto.Crude_fat}}%</span>
+            <span>grasa bruta</span>
+          </div>
+          <div class="ej1">
+            <span>{{producto.Crude_fiber}}%</span>
+            <span>fibra bruta</span>
+          </div>
+          <div class="ej1">
+            <span>{{producto.Crude_ash}}%</span>
+            <span>ceniza bruta</span>
+          </div>
+          <div class="ej1">
+            <span>{{producto.omega3}}%</span>
+            <span>Omega 3</span>
+          </div>
+          <div class="ej1">
+            <span>{{producto.omega6}}%</span>
+            <span>Omega 6</span>
+          </div>
+        </div>
+
+      </div>
+    </details>
+
+  </div>
+</section>
+<section id="elaboracion">
+  <div class="interno">
+    <div class="txt">
+      <h1>DESCUBRE CÓMO LO HACEMOS</h1>
+      <p>¿Quieres saber cuáles son nuestros ingredientes, cómo los elaboramos y los beneficios que tiene para tu perro o
+        gato? </p>
+      <a href="como-hacemos-nuestra-cocina-natural">NUESTRO PROCESO DE ELABORACIÓN</a>
+    </div>
+  </div>
+</section>
+
+
+<section id="ventaAlternativa">
+
+  <div class="interno">
+    <div class="sacosSS">
+      <div class="cardSS" *ngFor="let saco of piensos">
+        <div class="cardClick" (click)="verProducto(saco.name)">
+          <div class="imgContainer">
+            <img [src]="saco.image" alt="">
+          </div>
+          <div class="txtContainer">
+            <h1>{{saco.name}}</h1>
+            <p>{{saco.food_type}}&nbsp;&nbsp;&nbsp;{{saco.animal_age}}&nbsp;&nbsp;&nbsp;{{saco.animal_size}}</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

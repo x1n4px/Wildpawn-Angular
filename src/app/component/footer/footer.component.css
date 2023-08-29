@@ -1,0 +1,184 @@
+footer {
+  background-color: white;
+  height: 25vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+ }
+.container {
+  width: 100%;
+  max-width: 1450px;
+  height: 100%;
+}
+
+.fr1 {
+  height: 70%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.f1 {
+  width: 80%;
+  padding-top: 30px;
+  display: flex;
+}
+
+.f1t1 {
+  padding-left: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  color:black;
+}
+
+.f1t2 {
+  width: 30%;
+  height: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 50px;
+}
+
+.f1t2 a {
+  flex-basis: 50%;
+  box-sizing: border-box;
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.f2 {
+  width: 20%;
+}
+
+.f2 a {
+  padding-left: 20px;
+
+}
+
+.f2i1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+}
+
+.fr2 {
+  height: 30%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+
+
+
+.fr2mb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-right: 30px;
+
+}
+
+.fr2mb span {
+  display: flex;
+  align-items: center;
+  color: black;
+
+
+}
+
+
+.fr2mb a {
+  padding-left: 30px;
+
+  text-decoration: none;
+  color: black;
+
+}
+
+@media (max-width: 768px) {
+  footer {
+    height: auto;
+  }
+  .fr1 {
+    flex-direction: column-reverse;
+   }
+
+  .f1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .f1t1{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+     padding: 0;
+    margin: 0;
+    padding-top: 15px;
+  }
+  .f1t2 {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+     margin: 0;
+    padding: 0;
+    padding-bottom: 20px;
+  }
+  .f1t2 a {
+    padding-top: 15px;
+  }
+  .f2{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+   .fr2{
+     display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+   .fr2mb {
+    flex-direction: column;
+    align-items: flex-start;
+
+     padding: 0;
+   }
+
+  .fr2mb span {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+
+  .fr2mb a {
+    width: 100%;
+    align-items: center;
+    padding:30px 0;
+    text-align: center;
+   }
+}
+@media (min-width: 1450px) {
+
+
+  .body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid red;
+  }
+
+  .container {
+    max-width: 1450px;
+  }
+}

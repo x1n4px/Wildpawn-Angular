@@ -1,0 +1,33 @@
+<body>
+
+
+  <div class="container">
+    <div class="interno">
+      <h1>CATÁLOGO DE INGREDIENTES</h1>
+      <div class="selectores">
+        <a (click)="btnSelector('TODOS')">TODOS</a>
+        <a (click)="btnSelector('CARNE')">CARNE</a>
+        <a (click)="btnSelector('FRUTASYVERDURAS')">FRUTAS Y VERDURAS</a>
+        <a (click)="btnSelector('SUPERFOODS')">SUPERFOODS</a>
+        <a (click)="btnSelector('CEREALESINTEGRALES')">CEREALES INTEGRALES</a>
+        <a (click)="btnSelector('HIDRATOSDECARBONO')">HIDRATOS DE CARBONO</a>
+      </div>
+      <div class="contenedorCards">
+        <div class="card-container">
+          <div class="card" *ngFor="let ing of listaIngredientesFiltrados">
+            <div (click)="openIngredient(ing)">
+              <img [src]="ing.imagen" alt="">
+              <div class="info">
+                <span>{{ing.nombre}}</span>
+                <div class="verman">
+                  <a>Ver más</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

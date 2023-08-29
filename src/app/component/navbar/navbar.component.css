@@ -1,0 +1,290 @@
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  display: flex;
+  width: 100%;
+  height: 15vh;
+  background-color: white;
+}
+
+a {
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.leftC {
+  flex: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.leftC a {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  font-weight: 800;
+  width: auto;
+}
+
+.assets {
+  width: 30px;
+  height: 30px;
+}
+
+.image {
+  width: 200px;
+  height: 15vh;
+  object-fit: contain;
+}
+
+.midC {
+  flex: 40%;
+  width: 30%;
+  padding: 5px;
+
+}
+
+.midC a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.midC a img {
+  width: auto;
+  height: 90%;
+}
+
+.rigthC {
+  flex: 30%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+
+.articulosContador {
+  position: absolute;
+  right: 50px;
+  top: 80px;
+  width: 25px;
+  height: 25px;
+   z-index: 9999;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rigthC a {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+}
+
+
+.rigthC a img {
+  width: 100%;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #999;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 999999;
+}
+
+.sidebarUtils {
+  width: 60%;
+  height: 100%;
+  background-color: white;
+}
+
+.sidebar.show {
+  transform: translateX(0);
+}
+
+.sidebar-icon {
+  padding-left: 20px;
+  padding-top: 20px;
+  height: 5%;
+}
+
+.sidebar-icon a {
+  font-size: 16px;
+}
+
+.sidebar-icon a span {
+  font-size: 24px;
+  font-weight: 800;
+  margin-right: 10px;
+}
+
+.setOne {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.setOne a {
+  padding-left: 20px;
+  flex: 50%;
+
+  text-decoration: none;
+  color: black;
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.buscador {
+  padding-right: 30px;
+
+  flex: 50%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.buscador input {
+  padding: 12px;
+  width: 100%;
+}
+
+.searchIncon {
+  background-color: transparent;
+  position: absolute;
+  right: 40px;
+}
+
+.setTwo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 30%;
+}
+
+.left,
+.rigth {
+  flex: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.left {
+  padding-left: 20px;
+
+}
+
+.left h1,
+.rigth h1 {
+  margin-bottom: 15px;
+  font-weight: 900;
+  font-size: 28px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.left a,
+.rigth a {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-decoration: none;
+  color: black;
+}
+
+.centered-link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  font-weight: 800;
+}
+
+.centered-link svg {
+  margin-right: 5px;
+  /* Agrega espacio entre el icono y el texto */
+}
+
+
+.animacion-cesta {
+  color: #008bf8 !important;
+  animation-name: animacion-escala;
+  animation-duration: 2s;
+}
+
+@keyframes animacion-escala {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+@media (min-width: 700px) {
+  nav {
+    display: flex;
+    justify-content: center;
+  }
+
+  .container {
+    max-width: 1450px;
+    display: flex;
+  }
+
+}
+
+@media (max-width: 1450px) {
+  .sidebarUtils {
+    width: 100%;
+  }
+
+
+}
+
+@media (max-width: 768px) {
+  .rigthC a {
+    display: none;
+  }
+
+  .menu-text {
+    display: none;
+  }
+
+  .articulosContador {
+    display: none;
+  }
+}

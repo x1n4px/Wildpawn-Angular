@@ -1,0 +1,104 @@
+body {
+  display: flex;
+  justify-content: center;
+  height: auto;
+}
+
+.container {
+  width: 100%;
+  max-width: 1450px;
+   height: auto;
+   margin-bottom: 100px;
+}
+
+header {
+  padding: 50px;
+}
+
+header button {
+  padding: 10px 25px;
+  margin: 10px;
+  text-decoration: none;
+  color: black;
+  background-color: transparent;
+  border: 2px solid black;
+}
+
+.comprasB {
+  height: auto;
+  margin-left: 60px;
+  display: flex;
+  flex-direction: column;
+}
+.cajaContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.caja {
+  width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+.cajaDatos{
+  width: 500px;
+  height: 500px;
+  border: 1px solid black;
+}
+
+.link-with-arrows {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-decoration: none;
+ }
+.link-with-arrows:hover {
+  border: 2px solid black;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;}
+.link-text {
+  font-weight: 900;
+  color: black;
+  margin-right: 10px;
+}
+.link-text-double {
+  color: black;
+  font-weight: 900;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.additional-text {
+  color: #333;
+  font-weight: 200;
+}
+
+.arrow-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  border-radius: 50%;
+}
+
+
+
+.caja a span {
+  font-size: 12px;
+  margin-top: 5px;
+  color: #333;
+}
+
+button.active {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.comprasB a {
+  padding: 20px 30px;
+}

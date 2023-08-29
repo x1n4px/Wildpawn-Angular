@@ -1,0 +1,28 @@
+<body>
+  <div class="container">
+    <div class="contenedorUsuario">
+      <header>
+        <a [class.active]="seleccionado === 'login'" (click)="seleccionar('login')">Inicio de sesión</a>
+        <a [class.active]="seleccionado === 'register'" (click)="seleccionar('register')">Registro</a>
+      </header>
+      <div id="login" class="caja" *ngIf="seleccionado === 'login'">
+        <form (ngSubmit)="validarLogin()">
+          <input type="text" required placeholder="Correo electrónico" name="clienteEmail" [(ngModel)]="clienteLogin.email">
+          <input type="password" required placeholder="Contraseña" name="clientePassword" [(ngModel)]="clienteLogin.password">
+          <button type="submit">Iniciar sesión</button>
+
+        </form>
+
+      </div>
+      <div id="registro" class="caja" *ngIf="seleccionado === 'register'">
+        <input type="text" placeholder="Correo electrónico">
+        <input type="text" placeholder="Correo electrónico">
+        <input type="text" placeholder="Correo electrónico">
+        <input type="text" placeholder="Correo electrónico">
+        <input type="text" placeholder="Correo electrónico">
+        <input type="text" placeholder="Correo electrónico">
+        <button (click)="register()">Registrar</button>
+      </div>
+    </div>
+  </div>
+</body>

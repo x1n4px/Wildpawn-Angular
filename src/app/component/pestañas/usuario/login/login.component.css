@@ -1,0 +1,97 @@
+:root {
+  --primary-100: #8BC34A;
+  --primary-200: #6da52d;
+  --primary-300: #286400;
+  --accent-100: #FF9800;
+  --accent-200: #8f3d00;
+  --text-100: #333333;
+  --text-200: #5c5c5c;
+  --bg-100: #F5F5F5;
+  --bg-200: #ebebeb;
+  --bg-300: #c2c2c2;
+
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1450px;
+   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+ }
+
+
+.contenedorUsuario {
+  margin-top: 50px;
+   width: 500px;
+  height: 600px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  border: 2px solid #7CB342;
+  background-color: #7CB342;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+}
+
+header a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  text-align: center;
+  height: 100%;
+  cursor: pointer;
+   transition: background-color 0.3s, color 0.3s;
+}
+
+a.active {
+  background-color: #7CB342;
+  color: #fff;
+}
+
+a:not(.active) {
+  background-color: #286400;
+  color: rgba(255, 255, 255, 0.363);
+
+}
+
+.caja {
+  width: 500px;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+input {
+  padding: 15px 30px 15px 10px;
+  margin: 10px;
+}
+
+button {
+  padding: 15px 30px;
+  color: white;
+  background-color: #286400;
+  border: #286400;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 50px;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+}

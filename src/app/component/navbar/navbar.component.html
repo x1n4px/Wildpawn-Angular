@@ -1,0 +1,133 @@
+<nav>
+  <div class="container">
+    <div class="leftC">
+      <a (click)="toggleMenu()">
+        <img class="assets" src="../../../assets/menu-alt-left-regular-240.png" alt="">
+      </a>
+      <a href="">
+        <img class="image" src="../../../assets/logoGrande.png" alt="">
+      </a>
+    </div>
+    <div class="midC">
+
+    </div>
+    <div class="rigthC">
+      <a href="cesta">
+        <i id="icono-cesta"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-bag"
+            width="32" height="32" viewBox="0 0 24 24" stroke-width="2" stroke="#000000" fill="none"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M6.331 8h11.339a2 2 0 0 1 1.977 2.304l-1.255 8.152a3 3 0 0 1 -2.966 2.544h-6.852a3 3 0 0 1 -2.965 -2.544l-1.255 -8.152a2 2 0 0 1 1.977 -2.304z" />
+            <path d="M9 11v-5a3 3 0 0 1 6 0v5" />
+          </svg></i>
+      </a>
+      <a (click)="gestorUsuario('menu')">
+        <img src="../../../assets/user-regular-240.png" alt="">
+      </a>
+
+      <div class="articulosContador"  >
+        <span>{{ cantidadObjetos }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sidebar" [ngClass]="{'show': showMenu}">
+    <div class="sidebarUtils">
+      <div class="sidebar-icon">
+        <a (click)="toggleMenu()" class="centered-link">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24"
+            viewBox="0 0 24 24" stroke-width="2" stroke="#000000" fill="none" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M18 6l-12 12" />
+            <path d="M6 6l12 12" />
+          </svg> CERRAR MENÚ</a>
+      </div>
+      <div class="setOne">
+        <a href="">INICIO</a>
+        <div class="buscador">
+          <input type="text" placeholder="BUSCAR">
+          <div class="searchIncon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24"
+              viewBox="0 0 24 24" stroke-width="1.5" stroke="#8BC34A" fill="none" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+              <path d="M21 21l-6 -6" />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="setTwo">
+        <div class="left">
+          <h1>NATURE'S PAW</h1>
+          <a href="ingredientes">INGREDIENTES Y SU ORIGEN</a>
+          <a href="como-hacemos-nuestra-cocina-natural">CÓMO LO HACEMOS</a>
+          <a>GAMAS DE PRODUCTO</a>
+
+        </div>
+        <div class="rigth">
+          <H1>PERRO</H1>
+          <a href="perro/comida-seca-natural">COMIDA SECA NATURAL</a>
+
+          <a href="perro/comida-húmeda-natural">COMIDA HUMEDA NATURAL</a>
+
+          <a href="gama-producto">CONSEJOS PARA SU CUIDADO</a>
+        </div>
+      </div>
+      <div class="setTwo">
+        <div class="left">
+          <h1>GATO</h1>
+          <a href="gato/comida-seca-natural">COMIDA SECA NATURAL</a>
+          <a href="gato/comida-húmeda-natural">COMIDA HUMEDA NATURAL</a>
+          <a href="gama-producto">CONSEJOS PARA SU CUIDADO</a>
+        </div>
+        <div class="rigth">
+          <H1>DONDE COMPRAR</H1>
+          <a>COMPRAR ONLINE</a>
+          <a>COMPRAR EN TIENDA</a>
+        </div>
+      </div>
+      <div class="setTwo">
+        <div class="left">
+          <a href="" class="centered-link">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-help-circle" width="24"
+              height="24" viewBox="0 0 24 24" stroke-width="2" stroke="#000000" fill="none" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+              <path d="M12 16v.01" />
+              <path d="M12 13a2 2 0 0 0 .914 -3.782a1.98 1.98 0 0 0 -2.414 .483" />
+            </svg>
+            AYUDA Y CONTACTO
+          </a>
+        </div>
+        <div class="rigth">
+          <a (click)="gestorUsuario('sidebar')" class="centered-link">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-circle" width="24"
+              height="24" viewBox="0 0 24 24" stroke-width="2" stroke="#000000" fill="none" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+              <path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+              <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" />
+            </svg>
+            MI CUENTA
+          </a>
+          <a href="cesta" class="centered-link">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-bag"
+            width="32" height="32" viewBox="0 0 24 24" stroke-width="2" stroke="#000000" fill="none"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M6.331 8h11.339a2 2 0 0 1 1.977 2.304l-1.255 8.152a3 3 0 0 1 -2.966 2.544h-6.852a3 3 0 0 1 -2.965 -2.544l-1.255 -8.152a2 2 0 0 1 1.977 -2.304z" />
+            <path d="M9 11v-5a3 3 0 0 1 6 0v5" />
+          </svg>
+          CESTA
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

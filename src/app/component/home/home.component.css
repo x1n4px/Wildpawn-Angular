@@ -1,0 +1,611 @@
+/*:root {
+  --primary-100: #8BC34A;
+  --primary-200: #6da52d;
+  --primary-300: #286400;
+  --accent-100: #FF9800;
+  --accent-200: #8f3d00;
+  --text-100: #333333;
+  --text-200: #5c5c5c;
+  --bg-100: #F5F5F5;
+  --bg-200: #ebebeb;
+  --bg-300: #c2c2c2;
+
+}
+
+* {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ }
+body {
+  background-color: white;
+}
+section {
+  width: 100%;
+  height: 100vh;
+}
+
+#cabeceraNutricion {
+  height:85vh;
+  display: flex;
+  flex-direction: row;
+  background-color: #7CB342;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.text {
+  width: 40%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding-inline: 60px;
+}
+
+.text h1 {
+  font-size: 48px;
+  font-weight: 800;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: white;
+  padding-top: 30px;
+}
+
+.text p {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: white;
+  padding-right: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.text a {
+  padding: 16px 26px;
+  background-color: #8f3d00;
+    text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  border: none;
+}
+
+.imgMask {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgMask img {
+  width: 130%;
+  transition: opacity 0.5s ease;
+}
+
+.imgMask img.ng-tns-c11-0 {
+  opacity: 1;
+ }
+*/
+/*
+
+
+
+
+#preguntaMascota {
+  background-color: white;
+  height: 85vh;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.textoPreguntaMascota {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 150px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  color: #502300;
+}
+
+.textoPreguntaMascota h1 {
+  font-size: 36px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.textoPreguntaMascota p {
+  padding-inline: 100px;
+  font-weight: 500;
+}
+
+.textoPreguntaMascota a {
+  color: #286400;
+  text-decoration: none;
+  padding-bottom: 5px;
+  font-weight: 800;
+  width: 300px;
+  border-bottom: 1px solid #7CB342;
+
+}
+
+
+.fotoPerroPregunta {
+  position: absolute;
+  bottom: -30px;
+  left: -100px;
+  cursor: pointer;
+  width: 600px;
+}
+
+.fotoGatoPregunta {
+  position: absolute;
+  bottom: 0;
+  right: -150px;
+  cursor: pointer;
+  width: 600px;
+}
+
+.PerroPreguntaMascota a {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  background-color: #286400;
+  padding: 16px 24px;
+  border: none;
+  font-size: 14px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.GatoPreguntaMascota a {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  background-color: #286400;
+  padding: 16px 24px;
+  border: none;
+  font-size: 14px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.manchaPerro {
+  position: absolute;
+  bottom: 0;
+  left: -50px;
+
+  width: 400px;
+  transform: rotate(120deg);
+  animation: 1s all ease-in-out;
+}
+
+.manchaGato {
+  position: absolute;
+  bottom: 0;
+  right: -50px;
+  width: 400px;
+  transform: rotate(-60deg);
+}
+
+
+.PerroPreguntaMascota button:hover,
+.GatoPreguntaMascota button:hover {
+  background-color: #8BC34A;
+}
+
+
+#ingredientes {
+  height: 75vh;
+  background-image: url('../../../assets/fondo-texturizado-tela-lisa-simple.webp');
+  background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.ingredientesHead {
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-left: 50px;
+  padding-top: 50px;
+}
+
+.ingredientesHeadeTxt {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.ingredientesHeadeTxt p {
+  font-size: 48px;
+  font-weight: 900;
+  color: #286400;
+}
+
+.ingredientesHeadBt {
+  width: 60%;
+  display: flex;
+  margin-right: 100px;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 10px;
+}
+
+.ingredientesHeadBt button {
+  background-color: #286400;
+  color: white;
+  font-size: 18px;
+  border-radius: 100%;
+  padding: 12px 15px;
+}
+
+.ingredientesBdy {
+  height: 35vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.ingredientesTxt {
+  width: 30%;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-top: 10px;
+}
+
+.ingredientesTxt button {
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #286400;
+  font-weight: 800;
+  border: #286400;
+  margin-top: 50px;
+}
+
+.ingredientesScroolHr {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  overflow-y: hidden;
+  overflow-x: scroll;
+
+}
+
+.card {
+  width: 300px;
+  height: 300px;
+  margin-right: 30px;
+}
+
+.card img {
+  width: 300px;
+  height: 250px;
+}
+
+.card p {
+  font-size: 20px;
+  letter-spacing: 3px;
+  font-weight: 900;
+  color: #286400;
+}
+
+#Compromisos {
+  height: 50vh;
+  background-color: #ebebeb;
+}
+
+.compromisosHdr p {
+  font-size: 48px;
+  color: #286400;
+  font-weight: 900;
+  padding: 50px;
+  padding-bottom: 50px;
+
+}
+
+.compromisosBDY {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: #8f3d00;
+}
+
+.compromisoscard {
+  width: 30%;
+}
+.compromisoscard p {
+  width: 80%;
+}
+
+.compromisoscard img {
+  width: 50px;
+  margin: 10px;
+}
+
+@media (min-width: 1450px) {
+  body {
+    display: flex;
+    justify-content: center;
+    background-color: #F5F5F5;
+    height: auto;
+  }
+
+  .container {
+    max-width: 1450px;
+  }
+}
+
+@media (max-width: 1150px) {
+  #cabeceraNutricion {
+    justify-content: flex-start;
+    flex-direction: column-reverse;
+    padding: 0;
+    margin: 0;
+    height: 80vh;
+    position: relative;
+  }
+
+  .text {
+    width: 100%;
+    height: 50vh;
+    padding: 0;
+    align-items: center;
+  }
+
+  .text h1 {
+    font-size: 24px;
+    padding: 20px;
+  }
+
+  .text p {
+    padding: 20px;
+  }
+
+  .imgMask {
+    width: 100%;
+    height: 30vh;
+  }
+
+
+
+  .compromisosHdr p {
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+  }
+
+  #preguntaMascota {
+    z-index: 0;
+  }
+
+  .textoPreguntaMascota h1 {
+    font-size: 24px;
+  }
+
+  .textoPreguntaMascota {
+    top: 100px;
+  }
+
+  .textoPreguntaMascota p {
+    font-size: 14px;
+    padding-inline: 150px;
+  }
+
+  .fotoPerroPregunta {
+    bottom: -150px;
+    left: -200px;
+    width: 500px;
+  }
+
+  .PerroPreguntaMascota div button {
+    width: 150px;
+    bottom: -50px;
+    left: 0;
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .manchaPerro {
+    bottom: -50px;
+    left: -100px;
+    width: 80%;
+  }
+
+  .fotoGatoPregunta {
+    width: 500px;
+    bottom: -80px;
+    right: -200px;
+  }
+
+  .GatoPreguntaMascota div button {
+    width: 150px;
+    bottom: -150px;
+    right: 0;
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .manchaGato {
+    bottom: -50px;
+    right: -100px;
+    width: 80%;
+  }
+
+  #ingredientes {
+    height: 80vh;
+  }
+
+  .ingredientesHead {
+    height: 10vh;
+  }
+
+  .ingredientesHeadeTxt {
+    margin: 0;
+    padding: 0;
+  }
+
+  .ingredientesHeadeTxt p {
+    font-size: 28px;
+  }
+
+  .ingredientesHeadBt {
+    display: none;
+  }
+
+  .ingredientesBdy {
+    flex-direction: column;
+    height: 60vh;
+  }
+
+  .ingredientesTxt {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ingredientesTxt p {
+    padding-inline: 30px;
+  }
+
+  .ingredientesScroolHr {
+    width: 100%;
+    height: 500px;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+
+  #Compromisos {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .compromisosHdr {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 80%;
+  }
+
+  .compromisosBDY {
+    flex-direction: column;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .compromisoscard {
+    width: 80%;
+    margin-bottom: 30px;
+  }
+
+  #aNutriPerro {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 120px;
+  }
+  #aNutriGato{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 120px;
+
+  }
+}
+
+
+
+
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  display: none;
+}
+
+.image-container img.active {
+  display: block;
+}
+*/
+#columns {
+  display: flex;
+  height: auto;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1450px;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  margin: 10vh 0;
+}
+
+.c1 {
+  width: 30%;
+  margin-top: 20px;
+}
+
+.c2 {
+  width: 30%;
+}
+
+.c3 {
+  margin-top: 50px;
+  width: 30%;
+}
+
+.items {
+  width: 100%;
+  object-fit: contain;
+  border: 3px solid black;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  animation: verticalLoop 20s linear infinite;
+}
+
+.items img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@keyframes verticalLoop {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}

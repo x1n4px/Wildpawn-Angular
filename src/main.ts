@@ -1,4 +1,5 @@
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import 'aos/dist/aos.js';
 
 import { AppModule } from './app/app.module';
 

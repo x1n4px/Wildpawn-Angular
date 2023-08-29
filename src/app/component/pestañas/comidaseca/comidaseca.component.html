@@ -1,0 +1,65 @@
+<body>
+  <div class="container">
+    <section class="header">
+      <div class="htext">
+        <h1>{{tipoComida === 'comida-seca-natural'? 'COMIDA SECA NATURAL':'COMIDA HÚMEDA NATURAL'}}</h1>
+        <div class="hbutton">
+          <!-- <button (click)="changeObject()">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M5 12l14 0" />
+        <path d="M5 12l6 6" />
+        <path d="M5 12l6 -6" />
+      </svg>
+    </button> -->
+        </div>
+      </div>
+      <div class="hslider">
+        <div class="slide">
+          <div class="slideTxt">
+            <h1>{{tipoComida === 'comida-seca-natural'? slide[currentIndex].title: slideHumedo[0].title}}</h1>
+            <p>{{tipoComida === 'comida-seca-natural'? slide[currentIndex].decription: slideHumedo[0].description}}</p>
+          </div>
+          <div class="mancha">
+            <img [src]="slide[currentIndex].mancha" alt="">
+          </div>
+          <div class="himg">
+            <img [src]="tipoComida === 'comida-seca-natural'? slide[currentIndex].img: slideHumedo[0].img" alt="">
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="sacos">
+      <div class="cardContainer">
+        <div class="card" *ngFor="let saco of piensos">
+          <div class="cardClick" (click)="verProducto(saco.reference, saco.name, saco.id )">
+            <div class="imgContainer">
+              <img [src]="saco.image" alt="">
+              <div class="addToCart">
+                <button>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-plus" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                    <path d="M9 12l6 0" />
+                    <path d="M12 9l0 6" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="txtContainer">
+              <h1>{{saco.name}}</h1>
+              <p>{{saco.food_type}} {{saco.animal_age}} {{saco.animal_size}}</p>
+              <p>{{saco.price}} EUR</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+</body>
