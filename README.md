@@ -1,4 +1,7 @@
-# Naturepaws
+# WildPaws
+
+![nature](https://github.com/x1n4px/Wildpawn-Angular/blob/main/src/assets/logoGrande.png)
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.3.
 
