@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserDate } from 'src/app/class/user-date';
+import { Address, UserDate } from 'src/app/class/user-date';
 import { ControladorUsuarioService } from 'src/app/service/controlador-usuario.service';
 
 @Component({
@@ -15,7 +15,6 @@ export class UserHomeComponent {
 
    constructor(private controlarUsuario: ControladorUsuarioService, private router:Router) {
     this.user = this.controlarUsuario.getSaveCurrentUser();
-    console.log(this.user);
    }
 
   selectedButton: number = 2;
@@ -32,5 +31,19 @@ export class UserHomeComponent {
   logout(){
     this.controlarUsuario.logout();
     this.router.navigate(['']);
+  }
+
+   cambiarDirFav(index: number) {
+    this.controlarUsuario.changeAdressFav(index, this.user.id).subscribe(data => {
+     const newAdd = data;
+      this.newASingament(data);
+    }, err => {
+      console.log(err);
+    })
+  }
+
+  newASingament(date:any) {
+    this.user.address = date;
+    this.controlarUsuario.setCurrentUser(this.user);
   }
 }

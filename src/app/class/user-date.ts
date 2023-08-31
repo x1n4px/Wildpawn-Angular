@@ -13,6 +13,7 @@ export class Card {
   details!: string;
   name!: string;
   user_id!: number;
+  primary!: number;
 }
 
 export class Address {
@@ -23,4 +24,5 @@ export class Address {
   town!: string;
   country!: string;
   user_id!: number;
+  primary!: number;
 }

@@ -7,8 +7,8 @@ body {
 .container {
   width: 100%;
   max-width: 1450px;
-   height: auto;
-   margin-bottom: 100px;
+  height: auto;
+  margin-bottom: 100px;
 }
 
 header {
@@ -30,34 +30,65 @@ header button {
   display: flex;
   flex-direction: column;
 }
-.cajaContainer{
+
+.cajaContainer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+
 .caja {
   width: 50%;
   height: auto;
   display: flex;
   flex-direction: column;
 }
-.cajaDatos{
+
+.cajaDatos {
   width: 500px;
   height: 500px;
   border: 1px solid black;
 }
+
 .cajaDatosInfo {
   display: flex;
   flex-direction: column;
-
+  overflow-y: auto;
+  overflow-x: hidden;
 }
-.cajaDatosInfo a{
+
+.cajaDatosInfo a {
   display: flex;
   flex-direction: column;
   line-height: 1.5em;
   border: 1px solid black;
   text-decoration: none;
   color: #333;
+  position: relative;
+}
+
+.icon {
+  position: relative;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+.tooltip {
+  position: absolute;
+  top: 5px;
+  right: -300px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+   width: 200px;
+  height: 60px;
+}
+
+.icon:hover .tooltip {
+  display: block;
+  opacity: 1;
+  z-index: 9999;
+  right: 0;
 }
 
 .link-with-arrows {
@@ -67,15 +98,19 @@ header button {
   padding: 10px;
   border: 1px solid #ccc;
   text-decoration: none;
- }
+}
+
 .link-with-arrows:hover {
   border: 2px solid black;
-  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;}
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+}
+
 .link-text {
   font-weight: 900;
   color: black;
   margin-right: 10px;
 }
+
 .link-text-double {
   color: black;
   font-weight: 900;
@@ -114,4 +149,10 @@ button.active {
 
 .comprasB a {
   padding: 20px 30px;
+}
+
+
+.cajaDatosInfo a span:first-child {
+  display: flex;
+  justify-content: space-between;
 }

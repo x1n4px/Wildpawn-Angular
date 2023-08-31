@@ -1,39 +1,22 @@
-{
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcsIm5hbWUiOiJhZG1pbiIsImlhdCI6MTY5MzQ3NTE4NCwiZXhwIjoxNjkzNDc4Nzg0fQ.K-EytORWdeLHDXeC8KZs2H3aJn4GcgKwceGoFZEg2HM",
-  "userData": {
-      "id": 17,
-      "email": "admin",
-      "hashedPassword": "$2b$10$wn2kn7QDXZrvClpMm1Jg0enI1KgcDk9oS2WRhR9so2Jcz7gsLkVUG",
-      "Name": "Ignacio",
-      "Surname": "Fernandez",
-      "birthdate": "12/04/2000"
+[
+  {
+      "id": 1,
+      "street": "salvador rueda",
+      "number": "12",
+      "zip_code": "29651",
+      "town": "Mijas",
+      "country": "Spain",
+      "id_user": 17,
+      "primary": 1
   },
-  "Address": [
-      {
-          "id": 1,
-          "street": "salvador rueda",
-          "number": "12",
-          "zip_code": "29651",
-          "town": "Mijas",
-          "country": "Spain",
-          "id_user": 17
-      },
-      {
-          "id": 2,
-          "street": "Jilguero",
-          "number": "47",
-          "zip_code": "29640",
-          "town": "Fuengirola",
-          "country": "Spain",
-          "id_user": 17
-      }
-  ],
-  "Card": [
-      {
-          "id": 1,
-          "details": "0000000000001225123",
-          "name": "Ignacio Fdz",
-          "user_id": 17
-      }
-  ]
-}
+  {
+      "id": 2,
+      "street": "Jilguero",
+      "number": "47",
+      "zip_code": "29640",
+      "town": "Fuengirola",
+      "country": "Spain",
+      "id_user": 17,
+      "primary": 0
+  }
+]

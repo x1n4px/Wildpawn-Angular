@@ -7,7 +7,7 @@ import { UserDate } from '../class/user-date';
   providedIn: 'root'
 })
 export class ControladorUsuarioService {
-
+  url: any = 'http://localhost:3000';
   constructor(private http: HttpClient) { }
 
 
@@ -28,6 +28,16 @@ export class ControladorUsuarioService {
     });
     return this.http.post<any>(url, requestBody);
   }
+
+  public changeAdressFav(index: number, user_id:any) {
+    const requestBody = {
+      index,
+      user_id
+    }
+    return this.http.post('http://localhost:3000/changeAddressFav', requestBody);
+  }
+
+
 
   public registerUser() {
     const name = 'admin';
