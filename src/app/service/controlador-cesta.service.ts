@@ -66,8 +66,7 @@ export class ControladorCestaService {
   logintudCesta() {
     let total = 0;
     for(let i = 0; i < this.cesta.length; i++){
-      console.log(this.cesta);
-      total += parseInt(this.cesta[i].cantidad);
+       total += parseInt(this.cesta[i].cantidad);
     }
     return total;
   }

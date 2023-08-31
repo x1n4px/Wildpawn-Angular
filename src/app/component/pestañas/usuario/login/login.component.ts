@@ -24,8 +24,7 @@ export class LoginComponent {
   validarLogin() {
     this.controladorUsuario.validateToken(this.clienteLogin.email, this.clienteLogin.password).subscribe(
       (response) => {
-        console.log(response);
-        this.controladorUsuario.setToken(response.token);
+         this.controladorUsuario.setToken(response.token);
         this.controladorUsuario.setCurrentUser(response.user);
         this.router.navigate(['dashboard']);
       }, (error) => {

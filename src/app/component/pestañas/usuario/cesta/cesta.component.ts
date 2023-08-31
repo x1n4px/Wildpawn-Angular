@@ -18,8 +18,7 @@ export class CestaComponent implements OnInit {
 
   constructor(private cesta: ControladorCestaService, private router: Router, private dataService: DataService, private cdr: ChangeDetectorRef) {
     this.cestaCompleta = this.cesta.obtenercesta();
-    console.log(this.cestaCompleta);
-    }
+     }
   ngOnInit(): void {
     this.cantidadCesta = this.cesta.cantidadObjetos();
     this.calcularSubTotal();

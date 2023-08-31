@@ -14,9 +14,8 @@ export class UserHomeComponent {
 
 
    constructor(private controlarUsuario: ControladorUsuarioService, private router:Router) {
-    let userD = this.controlarUsuario.getSaveCurrentUser();
-    this.email = userD.email;
-    this.user = userD[0];
+    this.user = this.controlarUsuario.getSaveCurrentUser();
+    console.log(this.user);
    }
 
   selectedButton: number = 2;

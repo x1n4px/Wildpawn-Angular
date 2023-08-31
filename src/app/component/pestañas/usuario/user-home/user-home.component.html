@@ -28,7 +28,7 @@
             </span>
           </a>
 
-          <a class="link-with-arrows">
+          <a class="link-with-arrows" (click)="selectBox(2)">
             <span class="link-text" style="font-size: 20px;">Wallet</span>
 
 
@@ -41,9 +41,9 @@
               </svg>
             </span>
           </a>
-          <a class="link-with-arrows">
+          <a class="link-with-arrows" (click)="selectBox(3)">
             <span class="link-text-double" style="font-size: 20px;">Email
-              <span class="additional-text">{{email}}@email.com</span></span>
+              <span class="additional-text">{{user.email}}</span></span>
 
             <span class="arrow-icon">
               <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="32"
@@ -55,7 +55,7 @@
             </span>
           </a>
 
-          <a class="link-with-arrows">
+          <a class="link-with-arrows" (click)="selectBox(4)">
             <span class="link-text-double" style="font-size: 20px;">Telefono
               <span class="additional-text">000000000</span></span>
 
@@ -68,7 +68,7 @@
               </svg>
             </span>
           </a>
-          <a class="link-with-arrows">
+          <a class="link-with-arrows" (click)="selectBox(5)">
             <span class="link-text-double" style="font-size: 20px;">Cambiar la contraseña
               <span class="additional-text">*********</span></span>
 
@@ -86,11 +86,28 @@
 
         <div class="cajaDatos">
           <div class="cajaDatosInfo" *ngIf="selectedBox === 1">
-            <a href="">
+            <a *ngFor="let direccion of user.address; let i = index">
+              <span>Dirección {{i+1}}</span>
               <span>
-                {{user.address.town}}
+                Calle {{direccion.street}}, número {{direccion.number}}
               </span>
+              <span>
+                {{direccion.town}}, {{direccion.country}}
+              </span>
+              <span>{{direccion.zip_code}}</span>
             </a>
+          </div>
+          <div class="cajaDatosInfo" *ngIf="selectedBox === 2">
+
+          </div>
+          <div class="cajaDatosInfo" *ngIf="selectedBox === 3">
+
+          </div>
+          <div class="cajaDatosInfo" *ngIf="selectedBox === 4">
+
+          </div>
+          <div class="cajaDatosInfo" *ngIf="selectedBox === 5">
+
           </div>
         </div>
       </div>
