@@ -191,7 +191,7 @@ img {
 
 
 
-@media (min-width: 1450px) {
+@media (min-width: 1920px) {
   body {
     display: flex;
     justify-content: center;
@@ -200,9 +200,9 @@ img {
   }
 
   .container {
-    max-width: 1450px;
+    max-width: 1920px;
   }
   section {
-    width: 1450px;
+    width: 1920px;
   }
 }

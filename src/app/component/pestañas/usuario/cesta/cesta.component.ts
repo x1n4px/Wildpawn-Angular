@@ -3,8 +3,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Product } from 'src/app/class/product';
 import { ControladorCestaService } from 'src/app/service/controlador-cesta.service';
-import { DataService } from 'src/app/service/data.service';
-
+ 
 @Component({
   selector: 'app-cesta',
   templateUrl: './cesta.component.html',
@@ -16,7 +15,7 @@ export class CestaComponent implements OnInit {
   subtotal:any = 0;
 
 
-  constructor(private cesta: ControladorCestaService, private router: Router, private dataService: DataService, private cdr: ChangeDetectorRef) {
+  constructor(private cesta: ControladorCestaService, private router: Router, private cdr: ChangeDetectorRef) {
     this.cestaCompleta = this.cesta.obtenercesta();
      }
   ngOnInit(): void {

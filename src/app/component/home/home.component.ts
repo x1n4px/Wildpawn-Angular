@@ -12,42 +12,36 @@ import { PiensosService } from 'src/app/service/piensos.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit{
-  perroImagen: boolean = true;
-  mostrarManchaPerro = false;
-  mostrarManchaGato= false;
-  listaIngredientes: any[] = [];
-  c1Data: Product[] = [];
-  c2Data: Product[] = [];
-  c3Data: Product[] = [];
+export class HomeComponent implements OnInit {
 
-  constructor(private cestaC:ControladorCestaService, private ingredientesService: IngredientesService, private piensosService: PiensosService, private router: Router){
-    this.listaIngredientes = ingredientesService.devolverListaASeleccion(4);
-   }
+  currentImageIndex = 0;
+  images: string[] = [
+    'assets/dachshund-1519374_1280.jpg',
+    'assets/img1.jpg',
+    'assets/img2.jpg',
+    'assets/maltese-1123016_1280.jpg',
+    'assets/img3.jpg',
+    'assets/img4.jpg',
+    'assets/img5.jpg',
+    'assets/img6.jpg',
+    'assets/img7.jpg',
+    'assets/img8.jpg',
+    'assets/img9.jpg'
+  ]
+  currentImage!: string;
+
+  constructor(private cestaC: ControladorCestaService, private ingredientesService: IngredientesService, private piensosService: PiensosService, private router: Router) {
+    this.currentImage = this.images[Math.floor(Math.random() * 10)];
+  }
 
   ngOnInit() {
-    this.obtenerProductos('Perro','Dry', 1 );
-    this.obtenerProductos('Perro','Wet', 2 );
-    this.obtenerProductos('gato','Dry', 3 );
+     setInterval(() => this.changeImage(), 5000);
 
   }
 
-  obtenerProductos(animal: string, food_type: string, colum:any) {
-
-    this.piensosService.getProducts(animal, food_type).subscribe(
-      (data) => {
-         if(colum === 1){
-          this.c1Data = data;
-         }else if(colum === 2) {
-          this.c2Data = data;
-        }else if(colum === 3) {
-          this.c3Data = data;
-        }
-
-      }, (error) => {
-        console.error("Error");
-      }
-    );
+  changeImage() {
+    this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
+    this.currentImage = this.images[this.currentImageIndex];
 
   }
 
@@ -59,28 +53,10 @@ export class HomeComponent implements OnInit{
   }
 
 
-  mostrarMancha(animal: string) {
-    if(animal === 'P'){
-      this.mostrarManchaPerro = true;
 
-    }else{
-      this.mostrarManchaGato = true;
 
-    }
-  }
 
-  ocultarMancha(animal: string) {
-    if(animal === 'P'){
-      this.mostrarManchaPerro = false;
-
-    }else{
-      this.mostrarManchaGato = false;
-
-    }
-
-  }
-
-  verProducto(referencia: any, nombre: any, id:any, familia: any, tipoComida: any) {
-    this.router.navigate([familia,tipoComida, referencia, nombre], { queryParams: { id: id } });
+  verProducto(referencia: any, nombre: any, id: any, familia: any, tipoComida: any) {
+    this.router.navigate([familia, tipoComida, referencia, nombre], { queryParams: { id: id } });
   }
 }

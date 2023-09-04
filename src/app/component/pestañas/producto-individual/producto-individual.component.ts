@@ -15,27 +15,27 @@ export class ProductoIndividualComponent {
     private cesta: ControladorCestaService) {
   }
   familia: any;
-  producto!: Product;
+  producto: Product = new Product();
   productosCompletos: any[] = [];
   tipoComida: any;
-  piensos: Product[] = [];
+  piensos!: Product[];
   nombrePienso: any;
   sacoSeleccionado: any;
   pesos: any[] = [];
   id: any;
 
-
   ngOnInit() {
     let nombre;
 
     this.route.params.subscribe(params => {
-      const { familia, tipoComida, nombre, id } = params;
+      const { familia, tipoComida, referencia, nombre, id } = params;
       this.familia = familia;
-      this.tipoComida = tipoComida;
+      this.tipoComida = params['tipo-comida'];
       this.nombrePienso = nombre;
       this.id = id;
-
       this.onScrollToTop();
+
+
       this.route.queryParams.subscribe(params => {
         this.id = params['id'];
         this.obtenerProductoPorId(this.id);
@@ -49,10 +49,10 @@ export class ProductoIndividualComponent {
     if (food_type === 'comida-seca-natural') {
       tipo = 'Dry';
     }
-    this.piensosService.getProducts(animal, tipo).subscribe(
+    this.piensosService.getSimilarProduct(this.id, 3, 1, 10).subscribe(
       (data) => {
-        this.piensos = data;
-      }, (error) => {
+        this.piensos = data.datos;
+       }, (error) => {
         console.error("Error");
       }
     );
@@ -88,8 +88,8 @@ export class ProductoIndividualComponent {
 
 
 
-  verProducto(nombre: any) {
-    this.router.navigate([this.familia, this.tipoComida, nombre]);
+  verProducto(saco: any) {
+    this.router.navigate([this.familia, this.tipoComida, saco.reference, saco.name], { queryParams: { id: saco.id } });
   }
 
   aniadirCesta() {

@@ -8,8 +8,9 @@ footer {
  }
 .container {
   width: 100%;
-  max-width: 1450px;
+  max-width: 1920px;
   height: 100%;
+  margin-top: 50px;
 }
 
 .fr1 {
@@ -168,17 +169,4 @@ footer {
     text-align: center;
    }
 }
-@media (min-width: 1450px) {
 
-
-  .body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid red;
-  }
-
-  .container {
-    max-width: 1450px;
-  }
-}

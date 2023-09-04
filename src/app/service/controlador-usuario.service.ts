@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { UserDate } from '../class/user-date';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class ControladorUsuarioService {
   url: any = 'http://localhost:3000';
   constructor(private http: HttpClient) { }
 
-
+  
   //iniciamos sesión y establecemos el token en el localStorage
   public loginUser(token: any) {
     localStorage.setItem('token', token);
@@ -18,7 +19,7 @@ export class ControladorUsuarioService {
   }
 
   public validateToken(email: any, password: any): Observable<any> {
-    const url = 'http://localhost:3000/login';
+    const url = `${environment.apiUrl}/login`;
     const requestBody = {
       email: email,
       password: password,
@@ -34,7 +35,7 @@ export class ControladorUsuarioService {
       index,
       user_id
     }
-    return this.http.post('http://localhost:3000/changeAddressFav', requestBody);
+    return this.http.post('${environment.apiUrl}/changeAddressFav', requestBody);
   }
 
 
@@ -43,7 +44,7 @@ export class ControladorUsuarioService {
     const name = 'admin';
     const password = 'admin';
     const requestBody = { name, password };
-    return this.http.post('http://localhost:3000/registro', requestBody);
+    return this.http.post('${environment.apiUrl}/registro', requestBody);
   }
 
   public isLoggedIn() {

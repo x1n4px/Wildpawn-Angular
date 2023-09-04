@@ -20,7 +20,7 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1450px;
+  max-width: 1920px;
    height: 100vh;
   display: flex;
   justify-content: center;
@@ -35,8 +35,8 @@ body {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  border: 2px solid #7CB342;
-  background-color: #7CB342;
+  border: 2px solid #333;
+  background-color: #dedede;
 }
 
 header {
@@ -57,12 +57,12 @@ header a {
 }
 
 a.active {
-  background-color: #7CB342;
+  background-color: #333;
   color: #fff;
 }
 
 a:not(.active) {
-  background-color: #286400;
+  background-color: #cecece;
   color: rgba(255, 255, 255, 0.363);
 
 }
@@ -84,8 +84,8 @@ input {
 button {
   padding: 15px 30px;
   color: white;
-  background-color: #286400;
-  border: #286400;
+  background-color: #333;
+  border: #333;
   font-size: 16px;
   font-weight: 600;
   margin-top: 50px;
