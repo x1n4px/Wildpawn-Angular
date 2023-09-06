@@ -1,17 +1,3 @@
-root {
-  --primary-100: #8BC34A;
-  --primary-200: #6da52d;
-  --primary-300: #286400;
-  --accent-100: #FF9800;
-  --accent-200: #8f3d00;
-  --text-100: #333333;
-  --text-200: #5c5c5c;
-  --bg-100: #F5F5F5;
-  --bg-200: #ebebeb;
-  --bg-300: #c2c2c2;
-
-}
-
 section {
   display: flex;
   justify-content: center;
@@ -22,7 +8,7 @@ section {
 .interno {
   width: 100%;
   max-width: 1920px;
-  height: auto;
+  height: 75vh;
 }
 
 .internoG {
@@ -31,8 +17,9 @@ section {
 }
 
 .intGLeft {
-  width: 40%;
+  width: 50%;
   height: 100%;
+  max-height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,35 +27,35 @@ section {
 
 .intGLeft img {
   width: 100%;
-  height: 70%;
-  max-height: 470px;
+  height: 100%;
+  max-height: 68vh;
   object-fit: contain;
 }
 
 .intGRigth {
-  width: 60%;
+  width: 50%;
   padding-top: 50px;
 }
 
 .intGRigth p:nth-child(1) {
-  color: #286400;
+  color: #000;
   font-size: 54px;
   font-weight: 900;
   padding: 0px 30px 20px 0px;
 }
 
 .intGRigth p:nth-child(2) span:nth-child(1) {
-  color: #286400;
+  color: #333;
   margin-right: 10px;
 }
 
 .intGRigth p:nth-child(2) span:nth-child(2) {
-  color: #286400b3;
+  color: #333;
   margin-right: 10px;
 }
 
 .intGRigth p:nth-child(2) span:nth-child(3) {
-  color: #286400b3;
+  color: #333;
 }
 
 .intGRigth p:nth-child(3) {
@@ -92,10 +79,10 @@ section {
 
 .buttonCesta button {
   color: white;
-  background-color: #286400;
+  background-color: #000;
   width: 200px;
   height: 50px;
-  border: #286400;
+  border: #000;
   font-weight: 600;
   font-size: 16px;
 }
@@ -107,7 +94,7 @@ section {
 }
 
 .color {
-  background-color: #286400;
+  background-color: #000;
   color: white;
   max-width: 200px;
   width: 200px;
@@ -118,7 +105,7 @@ section {
 
 .colorNot {
   background-color: white;
-  color: #286400;
+  color: #000;
   max-width: 200px;
   width: 200px;
   max-height: 50px;
@@ -126,12 +113,19 @@ section {
   font-size: 18px;
 }
 
+.addBtn:active {
+  transform: scale(1.05);
+  background-color: white;
+  color: black;
+  border: 2px solid white;
+}
+
 .utils a {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   text-decoration: none;
-  color: #286400;
+  color: #000;
   padding: 20px;
   cursor: pointer;
 }
@@ -157,7 +151,7 @@ section {
 
 #ingredientes .interno h1 {
   font-size: 40px;
-  color: #286400;
+  color: #000;
   font-weight: 900;
   padding-bottom: 20px;
 }
@@ -169,46 +163,52 @@ section {
 }
 
 .card {
-  background-color: whitesmoke;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   width: calc(33% - 20px);
   height: 500px;
   display: flex;
   flex-direction: column;
-
+  overflow: hidden;
 }
 
 .imgC {
   display: flex;
   justify-content: center;
+  height: 50%;
 }
 
 .card img {
-  width: 250px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .card span:nth-child(2) {
   font-size: 20px;
-  color: #286400;
+  color: #000;
   padding: 0 0 20px 30px;
 }
 
 .card span:nth-child(3) {
   font-size: 26px;
   font-weight: 800;
-  color: #286400;
+  color: #000;
   padding: 0 30px 20px 30px;
 }
 
 .card span:nth-child(4) {
   font-size: 16px;
-  color: #286400;
+  color: #000;
   padding: 0 30px 20px 30px;
 
 }
 
 a {
   padding: 15px;
-  background-color: #286400;
+  background-color: #000;
   color: white;
   border: none;
   width: 200px;
@@ -227,7 +227,7 @@ a {
 
 #beneficios .interno span:first-child {
   font-size: 38px;
-  color: #286400;
+  color: #000;
   font-weight: 900;
 }
 
@@ -276,7 +276,7 @@ a {
 
 .txtHd span {
   font-size: 38px;
-  color: #286400;
+  color: #000;
   font-weight: 600;
 
 }
@@ -323,59 +323,16 @@ a {
 
 .ej1 span:nth-child(1) {
   font-size: 36px;
-  color: #286400;
+  color: #000;
   font-weight: 400;
 }
 
 .ej1 span:nth-child(2) {
   font-size: 18px;
-  color: #286400;
+  color: #000;
   font-weight: 100;
 }
 
-#elaboracion {
-  background-image: url('https://www.meteorologiaenred.com/wp-content/uploads/2021/12/puerto-en-noruega.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
- }
-
-#elaboracion .interno {
-  position: relative;
-}
-
-.txt {
-  position: absolute;
-  top: 0px;
-  left: 100px;
-  width: 400px;
-  height: 400px;
-  background-color: rgba(255, 255, 255, 0.255);
-  border-radius: 18% 82% 65% 35% / 49% 51% 49% 51%;
-  padding: 20px;
-  backdrop-filter: blur(4px);
-}
-
-.txt h1 {
-  font-size: 48px;
-  padding-right: 50px;
-  color: white;
-}
-
-.txt p {
-  font-size: 18px;
-  color: white;
-  padding: 30px 0;
-}
-
-.txt a {
-  padding: 15px;
-  width: 350px;
-  font-weight: 600;
-  cursor: pointer;
-
-}
 
 
 .sacosSS {
@@ -424,7 +381,7 @@ img {
 }
 
 .txtContainer p:nth-child(3) {
-  color: #286400a7;
+  color: #000a7;
 }
 
 .volver {
@@ -486,7 +443,7 @@ img {
   }
 
   .intGRigth p:nth-child(1) {
-    color: #286400;
+    color: #000;
     font-size: 32px;
     font-weight: 900;
     width: 100%;

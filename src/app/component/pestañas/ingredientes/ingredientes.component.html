@@ -15,13 +15,12 @@
       <div class="contenedorCards">
         <div class="card-container">
           <div class="card" *ngFor="let ing of listaIngredientesFiltrados">
-            <div (click)="openIngredient(ing)">
+            <div class="cardClick" (click)="openIngredient(ing)">
               <img [src]="ing.imagen" alt="">
               <div class="info">
                 <span>{{ing.nombre}}</span>
-                <div class="verman">
-                  <a>Ver más</a>
-                </div>
+
+
               </div>
             </div>
 

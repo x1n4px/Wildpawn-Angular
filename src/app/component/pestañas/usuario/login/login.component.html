@@ -15,12 +15,14 @@
 
       </div>
       <div id="registro" class="caja" *ngIf="seleccionado === 'register'">
-        <input type="text" placeholder="Correo electrónico">
-        <input type="text" placeholder="Correo electrónico">
-        <input type="text" placeholder="Correo electrónico">
-        <input type="text" placeholder="Correo electrónico">
-        <input type="text" placeholder="Correo electrónico">
-        <input type="text" placeholder="Correo electrónico">
+        <form  (ngSubmit)="register()">
+          <input type="text" placeholder="Correo electrónico" name="email" [(ngModel)]="clienteRegister.email" >
+          <input type="password" placeholder="Contraseña" name="password" [(ngModel)]="clienteRegister.password">
+          <input type="text" placeholder="Nombre" name="Nombre" [(ngModel)]="clienteRegister.name">
+          <input type="text" placeholder="Apellidos" name="Apellidos" [(ngModel)]="clienteRegister.surname">
+          <input type="text" placeholder="Cumpleados (dd/mm/yyyy)" name="Birthday" [(ngModel)]="clienteRegister.birthday">
+         </form>
+
         <button (click)="register()">Registrar</button>
       </div>
     </div>

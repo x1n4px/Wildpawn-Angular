@@ -6,23 +6,10 @@
   margin: 0;
 }
 
-:root {
-  --primary-100: #8BC34A;
-  --primary-200: #6da52d;
-  --primary-300: #286400;
-  --accent-100: #FF9800;
-  --accent-200: #8f3d00;
-  --text-100: #333333;
-  --text-200: #5c5c5c;
-  --bg-100: #F5F5F5;
-  --bg-200: #ebebeb;
-  --bg-300: #c2c2c2;
-
-}
-
 html,
 body {
   height: 100%;
+  background-color: white;
 }
 
 body {

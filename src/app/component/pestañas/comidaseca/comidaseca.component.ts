@@ -15,8 +15,9 @@ export class ComidasecaComponent implements OnInit {
   tipoComida: any;
   familia: any;
   imageSelect!:string;
-
-
+  pagina: number = 1;
+  resultadosXPagina: number = 6;
+  longitudDatos: number = 0;
 
   constructor(private piensosService: PiensosService, private route: ActivatedRoute, private router: Router) {
 
@@ -27,7 +28,7 @@ export class ComidasecaComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.familia = params['familia'];
       this.tipoComida = params['tipo-comida'];
-      this.obtenerProductos(this.familia, this.tipoComida);
+      this.obtenerProductos();
 
        if(this.tipoComida === 'comida-húmeda-natural'){
         this.imageSelect = '../assets/comidaHumeda.jpg';
@@ -46,20 +47,27 @@ export class ComidasecaComponent implements OnInit {
 
 
   products: any[] = [];
-  obtenerProductos(animal: string, food_type: string) {
+  obtenerProductos() {
     let tipo = 'dry';
-    if (food_type.includes('comida-húmeda-natural')) {
+    if (this.tipoComida.includes('comida-húmeda-natural')) {
       tipo = 'Wet';
     } else {
       tipo = 'Dry';
     }
-    this.piensosService.getProducts(animal, tipo).subscribe(
+    this.piensosService.getProducts(this.familia, tipo, this.pagina, this.resultadosXPagina).subscribe(
       (data) => {
-        this.piensos = data;
-        }, (error) => {
+        this.piensos = [...this.piensos, ...data.data];
+        this.longitudDatos = data.longitud_Total;
+         }, (error) => {
         console.error("Error");
       }
     );
 
+  }
+
+
+  cargar() {
+    this.pagina = this.pagina + 1;
+    this.obtenerProductos();
   }
 }

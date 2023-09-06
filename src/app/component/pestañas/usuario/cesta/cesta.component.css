@@ -33,8 +33,7 @@ header {
 }
 
 header a {
-  max-width: 300px;
-  width: 300px;
+  width: calc(20% );
   padding: 10px 0;
   display: flex;
   align-items: center;
@@ -43,6 +42,9 @@ header a {
   border-bottom: none;
   text-decoration: none;
   font-size: 12px;
+  background-color: black;
+  color: white;
+  font-size: 16px;
 }
 
 header a:first-child {
@@ -61,7 +63,7 @@ header a:first-child {
 
 .cards {
   border-inline: 1px solid black;
-  width: calc(20% - 2px);
+  width: calc(19.9% - 2px);
   height: 500px;
   display: flex;
   flex-direction: column;

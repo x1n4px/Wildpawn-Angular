@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { UserDate } from '../class/user-date';
 import { environment } from '../../environments/environment';
+import { UserRegister } from '../class/user-register';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class ControladorUsuarioService {
   url: any = 'http://localhost:3000';
   constructor(private http: HttpClient) { }
 
-  
+
   //iniciamos sesión y establecemos el token en el localStorage
   public loginUser(token: any) {
     localStorage.setItem('token', token);
@@ -35,16 +36,13 @@ export class ControladorUsuarioService {
       index,
       user_id
     }
-    return this.http.post('${environment.apiUrl}/changeAddressFav', requestBody);
+    return this.http.post(`${environment.apiUrl}/changeAddressFav`, requestBody);
   }
 
 
 
-  public registerUser() {
-    const name = 'admin';
-    const password = 'admin';
-    const requestBody = { name, password };
-    return this.http.post('${environment.apiUrl}/registro', requestBody);
+  public registerUser(requestBody:UserRegister) {
+     return this.http.post(`${environment.apiUrl}/registro`, requestBody);
   }
 
   public isLoggedIn() {

@@ -21,10 +21,12 @@ export class LoginComponent {
 
   }
 
+
+
   validarLogin() {
     this.controladorUsuario.validateToken(this.clienteLogin.email, this.clienteLogin.password).subscribe(
       (response) => {
-         this.controladorUsuario.setToken(response.token);
+        this.controladorUsuario.setToken(response.token);
         this.controladorUsuario.setCurrentUser(response.user);
         this.router.navigate(['dashboard']);
       }, (error) => {
@@ -41,7 +43,7 @@ export class LoginComponent {
 
 
   register() {
-    this.controladorUsuario.registerUser().subscribe(
+     this.controladorUsuario.registerUser(this.clienteRegister).subscribe(
       (response) => {
         console.log(response);
       }, (error) => {

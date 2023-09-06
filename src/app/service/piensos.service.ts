@@ -17,14 +17,17 @@ export class PiensosService {
   constructor(private http: HttpClient) { }
 
 
-  getProducts(animal: string, food_type: string): Observable<any> {
-    const queryParams = `?animal=${animal}&food_type=${food_type}`;
+  getProducts(animal: string, food_type: string, pagina:number, resultadosXPagina:number): Observable<any> {
+    const queryParams = `?animal=${animal}&food_type=${food_type}&pagina=${pagina}&resultadosXPagina=${resultadosXPagina}`;
     return this.http.get<any>(`${environment.apiUrl}/productos${queryParams}`);
   }
   devolverProducto(id: any): Observable<any> {
     return this.http.get<any>(`${environment.apiUrl}/producto/${id}`);
    }
-
+   getBusqueda(busqueda:any): Observable<any> {
+    const queryParams = `?busqueda=${busqueda}`;
+    return this.http.get<any>(`${environment.apiUrl}/busqueda${queryParams}`);
+  }
 
    getSimilarProduct(id: any, datosPedidos: any, numeroPagina: any, datosPagina: any): Observable<any> {
     const url = `${environment.apiUrl}/productos/similar`;

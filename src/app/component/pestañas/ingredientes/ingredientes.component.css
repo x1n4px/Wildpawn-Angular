@@ -1,23 +1,8 @@
-root {
-  --primary-100: #8BC34A;
-  --primary-200: #6da52d;
-  --primary-300: #286400;
-  --accent-100: #FF9800;
-  --accent-200: #8f3d00;
-  --text-100: #333333;
-  --text-200: #5c5c5c;
-  --bg-100: #F5F5F5;
-  --bg-200: #ebebeb;
-  --bg-300: #c2c2c2;
-
-}
-
 a {
   cursor: pointer;
 }
 
 .container {
-  background-color: #eae7dd;
   width: 100%;
   min-height: 93vh;
   display: flex;
@@ -45,7 +30,7 @@ h1 {
 
 .selectores a {
   font-size: 12px;
-  color: #286400;
+  color: #000;
   text-decoration: none;
 }
 
@@ -59,12 +44,10 @@ h1 {
 }
 
 .card-container {
-  width: auto;
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
   justify-content: center;
-
+  height: auto;
 }
 
 @keyframes fadeIn {
@@ -81,37 +64,59 @@ h1 {
 
 .card {
   width: calc(30%);
-  height: 350px;
+  height: width="100%";
   display: flex;
   flex-direction: column;
   animation: fadeIn 0.5s ease forwards;
   margin: 10px;
-}
+  }
 
 .card div {
   cursor: pointer;
 }
-
+.cardClick {
+  width: 100%;
+  height: 100%;
+}
 .card img {
   width: 100%;
-  height: 200px;
+  height: 100%;
   object-fit: cover;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.cardClick {
+  position: relative;
 }
 
 .info {
-  background-color: #F5F5F5;
-  height: 40%;
-  position: relative;
-  padding: 20px;
-
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+   background-color: #33333375;
+  visibility: hidden;
+  height: 80px;
 }
 
+.card:hover .info {
+  visibility: inherit;
+}
+.card:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+}
 .info span {
-  font-size: 18px;
+  font-size: 2em;
   letter-spacing: 1px;
   font-weight: 600;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color: #286400;
+  color: #000;
+  margin-left: 10px;
 }
 
 .verman {
@@ -129,7 +134,8 @@ h1 {
 
 @media (max-width: 768px) {
   .card {
-    width: calc(50% - 30px);
+    width: calc(100%);
+    height: 60%;
     margin-top: 30px;
   }
 
@@ -148,21 +154,23 @@ h1 {
 
   h1 {
     padding-top: 50px 0 20px 0;
-     margin-left: 30px;
-   }
+    margin-left: 30px;
+  }
 
 }
+
 @media (min-width: 1920px) {
   body {
     display: flex;
     justify-content: center;
-    background-color: #F5F5F5;
+    background-color: white;
     height: auto;
   }
 
   .container {
     max-width: 1920px;
   }
+
   section {
     width: 1920px;
   }

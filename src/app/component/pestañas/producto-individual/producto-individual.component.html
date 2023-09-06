@@ -25,17 +25,16 @@
         <p>{{producto.description}}</p>
 
         <div class="pesoSaco">
-          <div  >
-           <div *ngFor="let pesoS of pesos">
-               <!-- <button class="color"  *ngIf="pesoS.check">{{pesoS.weigth}} KG</button>
-              <button (click)="toggleCheck(pesoS.weigth)" class="colorNot" *ngIf="!pesoS.check">{{pesoS.weigth}} KG</button> -->
-              <button class="colorNot" (click)="change(pesoS.reference, pesoS.id)">{{pesoS.weigth}}</button>
+          <div>
+            <div *ngFor="let pesoS of pesos">
+              <button style="margin-right: 20px;" class="color" *ngIf="pesoS.check">{{pesoS.weigth}} KG</button>
+              <button style="margin-right: 20px;" class="colorNot" *ngIf="!pesoS.check" (click)="change(pesoS.reference, pesoS.id)">{{pesoS.weigth}} KG</button>
             </div>
           </div>
 
         </div>
         <div class="buttonCesta">
-          <button (click)="aniadirCesta()">Añadir a la cesta</button>
+          <button class="addBtn" (click)="aniadirCesta()">Añadir a la cesta</button>
         </div>
 
       </div>
@@ -58,7 +57,7 @@
     <a href="ingredientes">DESCUBRE MÁS</a>
   </div>
 </section>
-<section id="beneficios">
+<!-- <section id="beneficios">
   <div class="interno">
     <span>BENEFICIOS</span>
     <div class="container">
@@ -93,7 +92,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <section id="informacion">
   <div class="interno">
     <div class="txtHd">
@@ -149,16 +148,7 @@
 
   </div>
 </section>
-<section id="elaboracion">
-  <div class="interno">
-    <div class="txt">
-      <h1>DESCUBRE CÓMO LO HACEMOS</h1>
-      <p>¿Quieres saber cuáles son nuestros ingredientes, cómo los elaboramos y los beneficios que tiene para tu perro o
-        gato? </p>
-      <a href="como-hacemos-nuestra-cocina-natural">NUESTRO PROCESO DE ELABORACIÓN</a>
-    </div>
-  </div>
-</section>
+
 
 
 <section id="ventaAlternativa">
@@ -179,4 +169,5 @@
       </div>
     </div>
   </div>
+
 </section>

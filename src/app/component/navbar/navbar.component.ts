@@ -17,7 +17,7 @@ export class NavbarComponent {
   cestaVacia: boolean = true;
   cantidadObjetos: number = 0;
 
-
+  busquedaInput: any;
 
 
   constructor(private controladorUsuario: ControladorUsuarioService, private router: Router, private cesta: ControladorCestaService,
@@ -48,6 +48,13 @@ export class NavbarComponent {
     if (disp === 'sidebar') {
       this.toggleMenu();
     }
+  }
+
+
+  buscar() {
+    console.log(this.busquedaInput);
+    this.router.navigate(['busqueda/', this.busquedaInput]);
+    this.showMenu = !this.showMenu;
   }
 
 }

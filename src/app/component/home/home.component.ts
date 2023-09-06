@@ -18,8 +18,7 @@ export class HomeComponent implements OnInit {
   images: string[] = [
     'assets/dachshund-1519374_1280.jpg',
     'assets/img1.jpg',
-    'assets/img2.jpg',
-    'assets/maltese-1123016_1280.jpg',
+     'assets/maltese-1123016_1280.jpg',
     'assets/img3.jpg',
     'assets/img4.jpg',
     'assets/img5.jpg',

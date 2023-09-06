@@ -1,47 +1,3 @@
-<!-- <body>
-  <div class="container">
-    <section id="columns">
-      <div class="container">
-        <div class="image-container">
-          <img [src]="imageSelect" alt="Image">
-        </div>
-      </div>
-    </section>
-
-
-    <section class="sacos">
-      <div class="cardContainer">
-        <div class="card" *ngFor="let saco of piensos">
-          <div class="cardClick" (click)="verProducto(saco.reference, saco.name, saco.id )">
-            <div class="imgContainer">
-              <img [src]="saco.image" alt="">
-              <div class="addToCart">
-                <button>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-plus" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
-                    <path d="M9 12l6 0" />
-                    <path d="M12 9l0 6" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div class="txtContainer">
-              <h1>{{saco.name}}</h1>
-              <p>{{saco.food_type}} {{saco.animal_age}} {{saco.animal_size}}</p>
-              <p>{{saco.price}} EUR</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-</body> -->
-
-
 
 <section id="columns">
   <div class="container">
@@ -56,24 +12,17 @@
       <div class="cardClick" (click)="verProducto(saco.reference, saco.name, saco.id )">
         <div class="imgContainer">
           <img [src]="saco.image" alt="">
-          <div class="addToCart">
-            <button>
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-plus" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
-                <path d="M9 12l6 0" />
-                <path d="M12 9l0 6" />
-              </svg>
-            </button>
-          </div>
+
         </div>
         <div class="txtContainer">
           <h1>{{saco.name}}</h1>
           <p>{{saco.food_type}} {{saco.animal_age}} {{saco.animal_size}}</p>
-          <p>{{saco.price}} EUR</p>
+          <p>{{saco.weigth}} KG: {{saco.price}} EUR </p>
         </div>
       </div>
-
     </div>
+
   </div>
+  <button class="cargarBtn" (click)="cargar()" *ngIf="pagina*resultadosXPagina < longitudDatos">Cargar más</button>
+
 </section>

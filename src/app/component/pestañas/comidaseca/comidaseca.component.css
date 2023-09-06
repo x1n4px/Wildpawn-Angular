@@ -1,58 +1,65 @@
  @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Caveat&display=swap');
 
-/*
  #columns {
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  height: 100vh;
-
-}
-
-.container {
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  top: 0px;
-}
-
-.image-container {
-  width: 100%;
-  height: 105%;
-  transition: opacity 0.5s ease;
-
-}
-
-img {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  object-fit: cover;
-  overflow-x: hidden;
-
-}
- .sacos {
-   height: auto;
    display: flex;
    justify-content: center;
+   margin: 0;
+   padding: 0;
+   position: relative;
+   height: 100vh;
+
  }
+
+ .container {
+   width: 100%;
+   height: 105vh;
+   position: absolute;
+   top: -200px;
+ }
+
+ .image-container {
+   width: 100%;
+   height: 105%;
+   transition: opacity 0.5s ease;
+
+ }
+
+ img {
+   width: 100%;
+   height: 100%;
+   top: 0;
+   object-fit: cover;
+   overflow-x: hidden;
+
+ }
+
+ #Products {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+ }
+
 
  .cardContainer {
    display: flex;
    flex-wrap: wrap;
    justify-content: space-between;
    width: 90%;
+   max-width: 1920px;
+
  }
 
  .card {
    display: flex;
    flex-direction: column;
-   width: calc(30%);
-   height: 500px;
-   margin: 100px 0;
+   width: calc(33.33% - 10px);
+   height: 600px;
+   cursor: pointer;
+ }
 
+ .card:hover .imgContainer {
+   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
  }
 
  .imgContainer {
@@ -65,20 +72,6 @@ img {
    align-items: flex-end;
  }
 
- .addToCart {
-   position: absolute;
-   bottom: 0;
-   padding: 10px;
-   border-radius: 50%;
-   transform: translateY(20%);
- }
-
- .addToCart button {
-   border: none;
-   background-color: transparent;
-   cursor: pointer;
-   visibility: hidden;
- }
 
  .card:hover .addToCart button {
    visibility: visible;
@@ -87,169 +80,30 @@ img {
  .imgContainer img {
    width: 100%;
    height: 100%;
-   object-fit: cover;
+   object-fit: contain;
  }
 
  .txtContainer {
    padding-top: 20px;
    height: 30%;
-   padding-left: 20px;
  }
 
-
-
-
- .mancha {
-   position: absolute;
-   top: -30px;
-   right: -30px;
- }
-
- .mancha img {
-   width: 320px;
-   opacity: 0.6;
+ .cargarBtn {
+   padding: 20px 40px;
+   color: white;
+   background-color: black;
+   border: none;
+   font-size: 1.2em;
  }
 
  @media (max-width: 768px) {
-   .mancha {
-     display: none;
-   }
-
-   .slideTxt {
-     width: 100%;
-   }
-
-   .himg img {
-     width: 200px;
-   }
-
    .card {
-     width: 90%;
-     height: 250px;
      display: flex;
-     flex-direction: row;
-     background-color: rgb(246, 243, 243);
-     margin: 20px;
-     cursor: pointer;
+     flex-direction: column;
+     width: calc(100%);
+     height: 500px;
+     margin: 70px 0;
+
    }
+
  }
-
-
- @media (min-width: 1950px) {
-   body {
-     display: flex;
-     justify-content: center;
-     background-color: #F5F5F5;
-     height: auto;
-    }
-
-   .container {
-     max-width: 1920px;
-   }
-
-   section {
-     width: 1920px;
-   }
- }
-*/
-
-
-#columns {
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  height: 100vh;
-
-}
-
-.container {
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  top: 0px;
-}
-
-.image-container {
-  width: 100%;
-  height: 105%;
-  transition: opacity 0.5s ease;
-
-}
-
-img {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  object-fit: cover;
-  overflow-x: hidden;
-
-}
-
-#Products {
-  display: flex;
-  justify-content: center;
-
-}
-
-
-.cardContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 90%;
-   max-width: 1920px;
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  width: calc(30%);
-  height: 500px;
-  margin: 100px 0;
-
-}
-
-.imgContainer {
-  border: 1px solid black;
-  height: 450px;
-  width: 100%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
-
-.addToCart {
-  position: absolute;
-  bottom: 0;
-  padding: 10px;
-  border-radius: 50%;
-  transform: translateY(20%);
-}
-
-.addToCart button {
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  visibility: hidden;
-}
-
-.card:hover .addToCart button {
-  visibility: visible;
-}
-
-.imgContainer img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.txtContainer {
-  padding-top: 20px;
-  height: 30%;
-  padding-left: 20px;
-}
-
-  

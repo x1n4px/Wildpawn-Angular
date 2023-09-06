@@ -1,0 +1,16 @@
+<section>
+  <div class="cardContainer">
+    <div class="card" *ngFor="let result of resultados">
+      <div class="card-click" (click)="verProducto(result)">
+        <div class="imgC">
+          <img [src]="result.image" alt="">
+        </div>
+
+        <div class="text">
+          <p>{{result.name}}</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
