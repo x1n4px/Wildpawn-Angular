@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Caveat&display=swap');
 
 .container {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.7); /* Color de fondo translúcido */
+    backdrop-filter: blur(10px);
   position: fixed;
   top: 50%;
   left: 50%;
@@ -47,14 +48,14 @@
 }
 
 .name {
-  font-size: 24px;
+  font-size: 2em;
   color: #000;
   font-weight: 900;
 }
 
 .descripcion {
-  font-size: 16px;
-  color: #333;
+  font-size: 1.5em;
+  color: #111;
   font-weight: 300;
   padding-top: 20px;
 }
@@ -72,6 +73,7 @@ img {
   width: 50%;
   height: 100%;
   object-fit: cover;
+
  }
 
 .cardContainer {
