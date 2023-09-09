@@ -13,7 +13,10 @@
       <img [src]="data.ingrediente.imagen" alt="">
       <div class="text">
         <span class="name">{{data.ingrediente.nombre}}</span>
-        <span class="descripcion">{{data.ingrediente.descripcion}}</span>
+        <div class="text-description-overflow">
+          <span class="descripcion">{{data.ingrediente.descripcion}}</span>
+        </div>
+
       </div>
     </div>
 
