@@ -31,9 +31,9 @@ export class ComidasecaComponent implements OnInit {
       this.obtenerProductos();
 
        if(this.tipoComida === 'comida-húmeda-natural'){
-        this.imageSelect = '../assets/comidaHumeda.jpg';
+        this.imageSelect = '../assets/comidaHumeda.webp';
       }else{
-        this.imageSelect = '../assets/comidaSeca.jpg';
+        this.imageSelect = '../assets/comidaSeca.webp';
       }
     });
   }

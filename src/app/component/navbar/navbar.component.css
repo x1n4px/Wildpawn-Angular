@@ -73,7 +73,7 @@ a {
   justify-content: flex-end;
   align-items: center;
   position: relative;
-
+  margin-right: 30px;
   >a {
     margin-left: 20px;
   }

@@ -16,16 +16,16 @@ export class HomeComponent implements OnInit {
 
   currentImageIndex = 0;
   images: string[] = [
-    'assets/dachshund-1519374_1280.jpg',
-    'assets/img1.jpg',
-     'assets/maltese-1123016_1280.jpg',
-    'assets/img3.jpg',
-    'assets/img4.jpg',
-    'assets/img5.jpg',
-    'assets/img6.jpg',
-    'assets/img7.jpg',
-    'assets/img8.jpg',
-    'assets/img9.jpg'
+    'assets/dachshund-1519374_1280.webp',
+    'assets/img1.webp',
+     'assets/maltese-1123016_1280.webp',
+    'assets/img3.webp',
+    'assets/img4.webp',
+    'assets/img5.webp',
+    'assets/img6.webp',
+    'assets/img7.webp',
+    'assets/img8.webp',
+    'assets/img9.webp'
   ]
   currentImage!: string;
 
