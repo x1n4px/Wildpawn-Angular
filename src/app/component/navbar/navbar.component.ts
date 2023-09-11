@@ -52,8 +52,8 @@ export class NavbarComponent {
 
 
   buscar() {
-    console.log(this.busquedaInput);
-    this.router.navigate(['busqueda/', this.busquedaInput]);
+    const busqueda = this.busquedaInput;
+    this.router.navigate(['busqueda'], { queryParams: { busqueda } });
     this.showMenu = !this.showMenu;
   }
 

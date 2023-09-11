@@ -13,28 +13,21 @@ import { PiensosService } from 'src/app/service/piensos.service';
 export class BusquedaInputComponent {
   resultados: Product[] = [];
 
-  constructor(private piensosService: PiensosService, private route: ActivatedRoute, private router: Router, private viewportScroller: ViewportScroller,
+  constructor(private piensosService: PiensosService, private route: ActivatedRoute, private router: Router,
     private cesta: ControladorCestaService) {
   }
 
   ngOnInit() {
     let nombre;
+    const busqueda = this.route.snapshot.queryParams['busqueda'];
 
-    this.route.params.subscribe(params => {
-      const { familia, tipoComida, referencia, nombre, id } = params;
-
-      let busqueda = params['busqueda'];
-
-      console.log(busqueda);
-      this.piensosService.getBusqueda(busqueda).subscribe(
-        (data) => {
-          this.resultados = data;
-         }, (error) => {
-          console.error("Error");
-        }
-      );
-
-    });
+    this.piensosService.getBusqueda(busqueda).subscribe(
+      (data) => {
+        this.resultados = data;
+      }, (error) => {
+        console.error("Error");
+      }
+    );
 
   }
 

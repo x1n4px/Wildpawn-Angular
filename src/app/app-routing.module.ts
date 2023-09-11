@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'cesta', component: CestaComponent },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: UserHomeComponent },
-  { path: 'busqueda/:busqueda', component: BusquedaInputComponent },
+  { path: 'busqueda', component: BusquedaInputComponent },
   { path: ':familia/:tipo-comida/:referencia/:nombre', component: ProductoIndividualComponent },
   { path: ':familia/:tipo-comida', component: ComidasecaComponent }
 ];
