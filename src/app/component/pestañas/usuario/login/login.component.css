@@ -1,17 +1,3 @@
-:root {
-  --primary-100: #8BC34A;
-  --primary-200: #6da52d;
-  --primary-300: #286400;
-  --accent-100: #FF9800;
-  --accent-200: #8f3d00;
-  --text-100: #333333;
-  --text-200: #5c5c5c;
-  --bg-100: #F5F5F5;
-  --bg-200: #ebebeb;
-  --bg-300: #c2c2c2;
-
-}
-
 body {
   display: flex;
   justify-content: center;
@@ -21,22 +7,19 @@ body {
 .container {
   width: 100%;
   max-width: 1920px;
-   height: 100vh;
+  height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
- }
+  justify-content: flex-start;
+   padding-inline: 200px;
+}
 
 
 .contenedorUsuario {
-  margin-top: 50px;
-   width: 500px;
-  height: 600px;
+  width: 50%;
+  height: 70vh;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  border: 2px solid #333;
-  background-color: #dedede;
 }
 
 header {
@@ -53,17 +36,21 @@ header a {
   text-align: center;
   height: 100%;
   cursor: pointer;
-   transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+input {
+  border: none;
+  border-bottom: 2px solid black;
 }
 
 a.active {
-  background-color: #333;
-  color: #fff;
+  color: black;
+  border-bottom: 2px solid black;
 }
 
 a:not(.active) {
-  background-color: #cecece;
-  color: rgba(255, 255, 255, 0.363);
+  color: rgba(65, 65, 65, 0.514);
 
 }
 
@@ -91,7 +78,7 @@ button {
   margin-top: 50px;
 }
 
-form{
+form {
   display: flex;
   flex-direction: column;
 }
