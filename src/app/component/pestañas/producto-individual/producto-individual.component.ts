@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/class/product';
 import { ControladorCestaService } from 'src/app/service/controlador-cesta.service';
 import { PiensosService } from 'src/app/service/piensos.service';
+import { ProductosOfflineService } from 'src/app/service/productos-offline.service';
 
 @Component({
   selector: 'app-producto-individual',
@@ -12,7 +13,7 @@ import { PiensosService } from 'src/app/service/piensos.service';
 })
 export class ProductoIndividualComponent {
   constructor(private piensosService: PiensosService, private route: ActivatedRoute, private router: Router, private viewportScroller: ViewportScroller,
-    private cesta: ControladorCestaService) {
+    private cesta: ControladorCestaService, private productoOff: ProductosOfflineService) {
   }
   familia: any;
   producto: Product = new Product();
@@ -66,6 +67,11 @@ export class ProductoIndividualComponent {
         this.pesos = Object.values(this.producto.otherSize);
       }, (error) => {
         console.error("Error");
+        this.productoOff.devolverTodo().subscribe(
+          (data) => {
+             this.producto = data[id];
+          }
+        )
       }
     );
   }

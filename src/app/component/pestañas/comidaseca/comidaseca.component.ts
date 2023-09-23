@@ -3,6 +3,7 @@ import { PiensosService } from 'src/app/service/piensos.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ViewportScroller } from '@angular/common';
 import { Product } from 'src/app/class/product';
+import { ProductosOfflineService } from 'src/app/service/productos-offline.service';
 
 @Component({
   selector: 'app-comidaseca',
@@ -14,12 +15,14 @@ export class ComidasecaComponent implements OnInit {
   piensos: Product[] = [];
   tipoComida: any;
   familia: any;
-  imageSelect!:string;
+  imageSelect!: string;
   pagina: number = 1;
   resultadosXPagina: number = 6;
   longitudDatos: number = 0;
 
-  constructor(private piensosService: PiensosService, private route: ActivatedRoute, private router: Router) {
+  constructor(private piensosService: PiensosService,
+    private route: ActivatedRoute, private router: Router,
+    private productoOff: ProductosOfflineService) {
 
 
   }
@@ -30,9 +33,9 @@ export class ComidasecaComponent implements OnInit {
       this.tipoComida = params['tipo-comida'];
       this.obtenerProductos();
 
-       if(this.tipoComida === 'comida-húmeda-natural'){
+      if (this.tipoComida === 'comida-húmeda-natural') {
         this.imageSelect = '../assets/comidaHumeda.webp';
-      }else{
+      } else {
         this.imageSelect = '../assets/comidaSeca.webp';
       }
     });
@@ -41,8 +44,8 @@ export class ComidasecaComponent implements OnInit {
 
 
 
-  verProducto(referencia: any, nombre: any, id:any) {
-     this.router.navigate([this.familia, this.tipoComida, referencia, nombre], { queryParams: { id: id } });
+  verProducto(referencia: any, nombre: any, id: any) {
+    this.router.navigate([this.familia, this.tipoComida, referencia, nombre], { queryParams: { id: id } });
   }
 
 
@@ -54,12 +57,20 @@ export class ComidasecaComponent implements OnInit {
     } else {
       tipo = 'Dry';
     }
+
     this.piensosService.getProducts(this.familia, tipo, this.pagina, this.resultadosXPagina).subscribe(
       (data) => {
         this.piensos = [...this.piensos, ...data.data];
         this.longitudDatos = data.longitud_Total;
-         }, (error) => {
-        console.error("Error");
+      }, (error) => {
+         this.productoOff.getProducts().subscribe(
+          (data) => {
+              const var12 = data;
+            this.piensos = var12.filter((item: {
+              food_type: any; animal: any;
+            }) => item.animal === this.familia && item.food_type === tipo);
+          }
+        )
       }
     );
 

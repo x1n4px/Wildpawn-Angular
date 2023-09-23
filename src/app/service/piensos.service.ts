@@ -2,6 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
+import { ProductosOfflineService } from './productos-offline.service';
 
 
 @Injectable({
@@ -14,7 +15,7 @@ export class PiensosService {
 
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private productoOff: ProductosOfflineService) { }
 
 
   getProducts(animal: string, food_type: string, pagina:number, resultadosXPagina:number): Observable<any> {

@@ -16,7 +16,7 @@
         <div class="card-container">
           <div class="card" *ngFor="let ing of listaIngredientesFiltrados">
             <div class="cardClick" (click)="openIngredient(ing)">
-              <img [src]="ing.imagen" alt="">
+              <img loading="lazy" [src]="ing.imagen" alt="">
               <div class="info">
                 <span>{{ing.nombre}}</span>
 
